@@ -1,6 +1,26 @@
 # package_dev_documentation
 document how to develop a python package
 
+Basic directory tree
+------------------
+pkg_name  		<br>
+|--readme.md		<br>
+|--setup.py		<br>
+|--test_folder	<br>
+|--example_folder<br>
+|--pkg_name		<br>
+|		<br>
+
+Document Page
+------------------
+**Q: whay should introduce at the document page?**
+
+- what is this package for? The function and purposes (on the high level).
+- How to install the package?
+- The modules and explicit functions/features for each module.
+- Examples
+- license 
+
 Naming Conventions
 ------------------
 - 5 underscore patterns for naming conventions in Python:
@@ -18,3 +38,17 @@ Naming Conventions
 - name a class: use camel case style : `exampleClass`
 - use plural nouns to name sequence data (`names=['Alice','Bob']`)
 - For boolean vars, we can use `is_connect=True`
+
+requirements.txt
+-----------------
+tbd
+
+setup.py file
+-----------------
+tbd
+
+setup.cfg
+-----------------
+
+__init__.py file
+---

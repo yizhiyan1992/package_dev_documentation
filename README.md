@@ -338,3 +338,11 @@ setup(name='foobar',
 the `check` command allows you to verify if your pakage meta-data meet the minimum requirements to build a distribution.
 
 `$ python setup.py check`
+
+### General steps for package development
+1. choose your API (public and private methods, and add \_\_init\_\_.py for each folder)
+2. Documentation (including docstrings and README.md)
+3. Create a license
+4. Rearrange for packaging (version and install requires)
+5. Sign-up to PyPI
+6. Build and Deploy

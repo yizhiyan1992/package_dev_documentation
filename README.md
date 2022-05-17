@@ -346,3 +346,19 @@ the `check` command allows you to verify if your pakage meta-data meet the minim
 4. Rearrange for packaging (version and install requires)
 5. Sign-up to PyPI
 6. Build and Deploy
+
+### Docstring
+How to automatically generate docstrings for functions and classes?
+
+Use `pyment` package.
+
+```
+pyment --output numpydoc test.py #generate a patch
+patch -p1<test.py.patch #place the patch in the py file.
+```
+
+[GitHub](https://github.com/dadadel/pyment)
+
+A brief guidline teaching how to use pyment [here](http://daouzli.com/blog/pyment.html)
+
+Numpydoc style [here](https://numpydoc.readthedocs.io/en/latest/format.html)

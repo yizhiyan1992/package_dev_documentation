@@ -362,3 +362,55 @@ patch -p1<test.py.patch #place the patch in the py file.
 A brief guidline teaching how to use pyment [here](http://daouzli.com/blog/pyment.html)
 
 Numpydoc style [here](https://numpydoc.readthedocs.io/en/latest/format.html)
+
+### Sphinx with ReadTheDocs
+- step 1: create the folder 
+
+```
+mkdir docs
+cd docs
+pip install sphinx
+```
+- step 2 : initalize the doc using `sphinx-quickstart` command
+
+    configure the doc, Separate source and build directions [Y]
+- step 3 : change the configuration file at source/conf.py
+
+```python
+import os
+import sys # uncomment these two lines in the file
+
+sys.path.insert(0,os.path.abspath('../../<pkg_name>')) # add the package directory into file
+
+extensions = [
+    'recommonmark', #for markdown
+    'sphinx_markdown_tables', #for markdown
+    'sphinx.ext.autodoc', # for auto document
+    'sphinx.ext.napoleon', # for auto document
+    'sphinx_autodoc_typehints', # for the style of auto document
+    'numpydoc' # for the style of auto document
+]
+
+html_theme = 'sphinx_rtd_theme'
+
+```
+Note that if make html fails due to those extensions, use pip to install them. For instance `pip install sphinx_rtd_theme`.
+
+- step 4 : build the ReadTheDocs
+
+`make html` : build the html file.
+
+`open build/html/index.html` : check the interface.
+
+- **how to auto doc API functions?**
+  1. create the <module_name>.rst
+  2. In the rst file, inference the original module with following:
+   
+  ```
+  GPS Tool API Refereces
+  ==============================
+  .. automodule:: gpstools
+      :members:
+  ```
+  3. Add the rst file at the doctree in the index.rst file.
+
